@@ -20,6 +20,22 @@ router.get('/new', (req, res) => {
 //new post route
 router.post('/', (req, res) => {
 	console.log(req.body);
+
+	if(req.body.firstEdition === 'on'){
+		req.body.firstEdition = true;
+	}else{
+		req.body.firstEdition = false;
+	}
+	
+	Records.create(req.body, (err, createdRecord) => {
+		if(err){
+			console.log(err);
+		}else{
+			console.log(createdRecord);
+			res.redirect('/records')
+		}
+	})
+
 })
 
 
