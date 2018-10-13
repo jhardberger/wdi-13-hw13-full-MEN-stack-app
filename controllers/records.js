@@ -9,7 +9,14 @@ const Records = require('../models/records');
 
 //index route TK - test for now
 router.get('/', (req, res) => {
-	res.send('this is where my records will go')
+	Records.find({}, (err, allRecords) => {
+		if(err){
+			console.log(err);
+		}else{
+			console.log(allRecords)
+			res.render('index.ejs', {records: allRecords})
+		}
+	})
 });
 
 //new route
