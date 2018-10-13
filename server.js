@@ -1,7 +1,14 @@
 const express 		= require('express');
 const app			= express();
 
+const recordsController = require('./controllers/records');
 
+/*---------------------------------------
+			   MiddleWare
+---------------------------------------*/
+
+//should be last - note to self
+app.use('/records', recordsController);
 /*---------------------------------------
 				Listener
 ---------------------------------------*/
