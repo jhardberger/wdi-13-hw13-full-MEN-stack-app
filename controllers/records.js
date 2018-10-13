@@ -41,9 +41,35 @@ router.post('/', (req, res) => {
 			console.log(createdRecord);
 			res.redirect('/records')
 		}
-	})
+	});
+});
 
-})
+
+//edit route
+router.get('/:id/edit', (req, res) => {
+	Records.findById(req.params.id, (err, foundRecord) => {
+		res.render('edit.ejs', {
+			record: foundRecord,
+		});
+	});
+});
+
+//show route
+router.get('/:id', (req, res) => {
+	console.log(req.params.id);
+	Records.findById(req.params.id, (err, foundRecord) => {
+		console.log(foundRecord);
+		res.render('show.ejs', {
+			record: foundRecord
+		})
+	});
+});
+
+//edit put route
+router.put('/:id', (req, res) => {
+	console.log(req.params.id);
+	console.log(req.body);
+});
 
 
 

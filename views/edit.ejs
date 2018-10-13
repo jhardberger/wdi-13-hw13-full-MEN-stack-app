@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h1>Edit</h1>
+	<form method="POST" action="/records/<%=record.id%>?_method=PUT">
+		Title: <input type="text" name="title" value="<%=record.title%>"><br>
+		Artist: <input type="text" name="artist" value="<%=record.artist%>"><br>
+		Year: <input type="String" name="year" value="<%=record.year%>"><br>
+		First Edition: <input type="checkbox" name="firstEdition" 
+		<%if(record.firstEdition === true){%>checked><%}%>><br>
+		<input type="submit">
+	</form>
+</body>
+</html>

@@ -1,7 +1,7 @@
 const express 		 = require('express');
 const app			 = express();
 const bodyParser = require('body-parser');
-// const methodOverride = require('method-override');
+const methodOverride = require('method-override');
 
 //db
 require('./db/db');
@@ -12,7 +12,7 @@ const recordsController = require('./controllers/records');
 			   MiddleWare
 ---------------------------------------*/
 app.use(bodyParser.urlencoded({extended: false}));
-// app.use(methodOverride('_method'));
+app.use(methodOverride('_method'));
 
 //should be last - note to self
 app.use('/records', recordsController);
