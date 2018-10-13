@@ -80,6 +80,13 @@ router.put('/:id', (req, res) => {
 	});
 });
 
+//delete route
+router.delete('/:id', (req, res) => {
+	console.log(req.params.id);
+	Records.findByIdAndRemove(req.params.id, () => {
+		res.redirect('/records')
+	});
+});
 
 //the end
 module.exports = router;
