@@ -17,6 +17,11 @@ router.get('/new', (req, res) => {
 	res.render('new.ejs')
 });
 
+//new post route
+router.post('/', (req, res) => {
+	console.log(req.body);
+})
+
 
 
 
