@@ -5,10 +5,21 @@
 </head>
 <body>
 	<h1>MY RECORD COLLECTION:</h1>
+	<h3>(click to edit)</h3>
 	<ul>
 		<%records.forEach((elem, i) => {%>
-			<li><i><%=elem.title%></i>, <%=elem.artist%> (<%=elem.year%>)</li>
+			<li><i><%=elem.title%></i>, <%=elem.artist%> (<%=elem.year%>)
+				<%if (elem.firstEdition === true){%>
+				&#9745;	
+				<%}else{%>
+				&#9633;
+				<%}%>
+			</li>
 		<%})%>
 	</ul>
+	<br>
+	<form action="/records/new">
+		<input type="submit" value="Add">
+	</form>
 </body>
 </html>
