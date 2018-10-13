@@ -16,7 +16,7 @@ router.get('/', (req, res) => {
 			console.log(allRecords)
 			res.render('index.ejs', {records: allRecords})
 		}
-	})
+	});
 });
 
 //new route

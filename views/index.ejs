@@ -5,5 +5,10 @@
 </head>
 <body>
 	<h1>MY RECORD COLLECTION:</h1>
+	<ul>
+		<%records.forEach((elem, i) => {%>
+			<li><i><%=elem.title%></i>, <%=elem.artist%> (<%=elem.year%>)</li>
+		<%})%>
+	</ul>
 </body>
 </html>
