@@ -1,6 +1,9 @@
 const express 		= require('express');
 const app			= express();
 
+//db
+require('./db/db');
+//controller
 const recordsController = require('./controllers/records');
 
 /*---------------------------------------
