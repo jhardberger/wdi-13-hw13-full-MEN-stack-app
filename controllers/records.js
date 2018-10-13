@@ -69,18 +69,16 @@ router.get('/:id', (req, res) => {
 router.put('/:id', (req, res) => {
 	console.log(req.params.id);
 	console.log(req.body);
+	if(req.body.firstEdition === 'on'){
+		req.body.firstEdition = true;
+	}else{
+		req.body.firstEdition = false;
+	}
+
+	Records.findByIdAndUpdate(req.params.id, req.body, (err, updatedRecord) => {
+		res.redirect('/records')
+	});
 });
-
-
-
-
-
-
-
-
-
-
-
 
 
 //the end
